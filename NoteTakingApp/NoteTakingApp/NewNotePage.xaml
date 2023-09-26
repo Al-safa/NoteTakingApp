@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NoteTakingApp.NewNotePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightCyan">
+            <Frame CornerRadius="30" 
+                   Padding="20,0,20,0" 
+                   Margin="10,10,10,0">
+                <Entry Placeholder="Note Title" 
+                       x:Name="titleEntry"
+                       PlaceholderColor="Gray" 
+                       FontSize="25" TextColor="Black" 
+                       Margin="0,0,0,0" 
+                       ClearButtonVisibility="WhileEditing" 
+                       MaxLength="22" 
+                       FontAttributes="Bold">
+                    
+                </Entry>  
+            </Frame>
+            
+            <Frame CornerRadius="30" Margin="15,5,15,5">
+                <Editor x:Name="TextBox" 
+                        Placeholder="Note it here..." 
+                        HeightRequest="426" 
+                        PlaceholderColor="Gray" 
+                        FontSize="20">
+                    
+                </Editor>  
+            </Frame>
+            
+                <Button x:Name="texttovoicebutton" 
+                    BackgroundColor="LightBlue" 
+                    Text="Text to Voice" 
+                    TextColor="DarkBlue" 
+                    FontAttributes="Bold" 
+                    CornerRadius="15" 
+                    Padding="0,10,0,10" 
+                    Margin="110,0,110,0" 
+                    Clicked="Button_Clicked">
+                </Button>
+                <Button Text="Save" 
+                    TextColor="DarkBlue" 
+                    BackgroundColor="LightBlue" 
+                    CornerRadius="15" 
+                    Margin="110,0,110,0" 
+                    FontAttributes="Bold"
+                    Clicked="Button_Clicked_1">
+                </Button>
+
+                
+
+            
+            
+                   
+           
+            
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

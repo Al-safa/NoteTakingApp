@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NoteTakingApp.MainPage">
+
+    <StackLayout Orientation="Vertical" BackgroundColor="White">
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="LightCyan">
+            <Label Text="My Notes"
+                   HeightRequest="70" 
+                   TextColor="DarkBlue" 
+                   FontSize="33" 
+                   FontAttributes="Bold" 
+                   Padding="0,10,0,0" 
+                   Margin="10,10,0,0"/>
+            <Button Text="+"  
+                    FontSize="33" 
+                    TextColor="LightCyan"  
+                    BackgroundColor="DarkBlue" 
+                    CornerRadius="20" 
+                    Clicked="Button_Clicked" 
+                    HorizontalOptions="EndAndExpand"
+                    Margin="0,15,10,10" 
+                    Padding="0,0,0,0">
+                
+            </Button>
+            
+        </StackLayout>
+        <CollectionView x:Name="TheCollectionView"
+                        SelectionMode ="Single">
+            <CollectionView.ItemTemplate>
+                
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Edit"
+                                           BackgroundColor="DarkBlue"
+                                           CommandParameter="{Binding .}"
+                                           Invoked="SwipeItem_Invoked"/>
+                                <SwipeItem Text="Delete"
+                                           BackgroundColor="IndianRed"
+                                           CommandParameter="{Binding .}"
+                                           Invoked="SwipeItem_Invoked_1"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                    <Grid RowSpacing="0" Margin="0,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="{Binding title}"
+                                 Grid.Row="0" Grid.Column="1"
+                                 VerticalOptions="CenterAndExpand"
+                                 FontSize="25"
+                                 FontAttributes="Bold"
+                                 TextColor="Black"/>
+                        <Label Text="{Binding description}"
+                                 Grid.Row="1" Grid.Column="1"
+                                 FontSize="15"
+                                 TextColor="Black"
+                                 Margin="0,0,0,5"/>
+                            
+                    </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+                       
+        
+
+
+            
+        
+    </StackLayout>
+
+</ContentPage>
